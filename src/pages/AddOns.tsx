@@ -1,5 +1,6 @@
 import { Heading } from "@/components/common";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const addons = [
   {
@@ -24,9 +25,18 @@ const addons = [
 
 const AddOns = () => {
   const [selected, setSelected] = useState([true, true, false]);
+  const navigate = useNavigate();
 
   const toggle = (idx: number) => {
     setSelected((prev) => prev.map((v, i) => (i === idx ? !v : v)));
+  };
+
+  const handleNext = () => {
+    navigate("/summary");
+  };
+
+  const handleBack = () => {
+    navigate("/plans");
   };
 
   return (
@@ -68,12 +78,14 @@ const AddOns = () => {
         <button
           type="button"
           className="text-grey-500 font-medium hover:underline transition cursor-pointer"
+          onClick={handleBack}
         >
           Go Back
         </button>
         <button
           type="submit"
           className="bg-blue-950 text-white font-medium rounded-lg px-8 py-3 hover:bg-blue-900 transition cursor-pointer"
+          onClick={handleNext}
         >
           Next Step
         </button>

@@ -5,8 +5,11 @@ import type { TFormData } from "@/types";
 import { FormInputSchema } from "@/schemas";
 import { Heading } from "@/components/common";
 import { FormInput } from "@/components";
+import { useNavigate } from "react-router";
 
 const PersonalInfo = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -14,10 +17,10 @@ const PersonalInfo = () => {
   } = useForm<TFormData>({
     resolver: zodResolver(FormInputSchema),
   });
-  const onSubmit = (data: TFormData) => console.log(data);
+  const onSubmit = (data: TFormData) => navigate("/plans");
 
   return (
-    <div className="flex flex-col w-full px-8 mt-8">
+    <>
       <Heading
         title={"Personal info"}
         description={
@@ -62,7 +65,7 @@ const PersonalInfo = () => {
           </button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 export default PersonalInfo;

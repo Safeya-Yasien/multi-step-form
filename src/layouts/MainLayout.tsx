@@ -14,7 +14,9 @@ const MainLayout = () => {
         <StepsSidebar currentStep={step} />
         {/* forms */}
         <div className="bg-white rounded-lg md:rounded absolute top-32 md:top-0 md:static pb-2 w-[90%] ">
-          <Outlet />
+          <div className="flex flex-col w-full px-8 mt-8">
+            <Outlet />
+          </div>
         </div>
       </div>
     </div>

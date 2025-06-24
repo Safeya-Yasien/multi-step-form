@@ -1,6 +1,17 @@
 import { Heading } from "@/components/common";
+import { useNavigate } from "react-router";
 
 const Summary = () => {
+  const navigate = useNavigate();
+
+  const handleConfirm = () => {
+    console.log("Confirm");
+  };
+
+  const handleBack = () => {
+    navigate("/add-ons");
+  };
+
   return (
     <div className="flex flex-col h-full justify-between gap-12">
       <div className="flex flex-col">
@@ -43,12 +54,14 @@ const Summary = () => {
         <button
           type="button"
           className="text-grey-500 font-medium hover:underline transition cursor-pointer"
+          onClick={handleBack}
         >
           Go Back
         </button>
         <button
           type="submit"
           className="bg-purple-600 text-white font-medium rounded-lg px-8 py-3 hover:bg-purple-700 transition cursor-pointer"
+          onClick={handleConfirm}
         >
           Confirm
         </button>
