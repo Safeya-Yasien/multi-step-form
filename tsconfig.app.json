@@ -17,7 +17,8 @@
       "@types/*": ["src/types/*"],
       "@assets/*": ["src/assets/*"],
       "@layouts/*": ["src/layouts/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@data/*": ["src/data/*"]
     },
 
     /* Bundler mode */
