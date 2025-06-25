@@ -7,6 +7,7 @@ import AddOns from "@/pages/AddOns";
 import Summary from "@/pages/Summary";
 import Error from "@/pages/Error";
 import MainLayout from "@/layouts/MainLayout";
+import ThankYou from "@/pages/ThankYou";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "summary",
         element: <Summary />,
+      },
+      {
+        path: "thank-you",
+        element: <ThankYou />,
       },
     ],
   },

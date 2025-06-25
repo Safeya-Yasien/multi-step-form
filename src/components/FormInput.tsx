@@ -1,27 +1,35 @@
+import type { IFormInputProps } from "@/types";
+
 const FormInput = ({
   name,
   label,
   type,
+  id,
   placeholder,
-}: {
-  name: string;
-  label: string;
-  type: string;
-  placeholder: string;
-}) => {
+  register,
+  error,
+}: IFormInputProps) => {
   return (
-    <div>
+    <div className="relative">
       <label
         htmlFor={name}
         className="text-blue-950 font-medium text-sm block mb-1"
       >
         {label}
       </label>
+      <p className="absolute right-0 top-0 text-red-500 font-medium text-sm">
+        {error?.message}
+      </p>
       <input
         type={type}
-        id={name}
-        className="border border-purple-200 rounded-lg p-3 focus:outline-none focus:border-blue-950 text-blue-950 text-base placeholder-gray-400 w-full"
+        id={id}
+        className={`border ${
+          error
+            ? "border-red-500 focus:border-red-500"
+            : "border-purple-200 focus:border-blue-950"
+        } rounded-lg p-3 focus:outline-none  text-blue-950 text-base placeholder-gray-400 w-full `}
         placeholder={placeholder}
+        {...register(name)}
       />
     </div>
   );

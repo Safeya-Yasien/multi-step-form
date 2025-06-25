@@ -1,3 +1,4 @@
 import { billingPlans } from "./billingPlans";
+import { addOns } from "./addOns";
 
-export { billingPlans };
+export { billingPlans, addOns };
