@@ -48,21 +48,24 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Safeya-Yasien/multi-step-form)
+- Live Site URL: [Add live site URL here](https://multi-step-form-frontendmentor2025.netlify.app/)
 
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
-- Flexbox
-- CSS Grid
+- Tailwind CSS
+- Flexbox & Grid layout
+- Mobile-first responsive design
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
+- [TypeScript](https://www.typescriptlang.org/) - JS language
+- [React Router](https://reactrouter.com/) - For routing
+- [React Hook Form](https://react-hook-form.com/) - For form validation
+- [Zod](https://zod.dev/) - For form validation
+- [Valtio](https://valtio.dev/docs/introduction/getting-started) - For state management
 
 **Note: These are just examples. Delete this note and replace the list above with your own choices**
 
@@ -92,19 +95,13 @@ If you want more help with writing markdown, we'd recommend checking out [The Ma
 
 **Note: Delete this note and the content within this section and replace with your own learnings.**
 
-- Good structure for the project components ✅
-- Make separate components for each step ✅
-- Use react-hook-form and zod for form validation ✅
-- It's best to use steps routing or components??????????????????????✅
-  the answer depends on the project and copilot's preference that small projects can be done with components and large projects can be done with steps routing
-- Make separate Schemas for each step
-- Handle form validation errors
-- Handle form submission
-- Handle TypeScript type errors
-- Use useFormContext for form state management
-- Gain new knowledge about React Hook Form advanced features wizard form (https://react-hook-form.com/advanced-usage#WizardFormFunnel)
-- Handle responsive design for different screen sizes ???????????????????????????????????????????
-- Add path alias for the components (https://medium.com/@ssafeya5/set-up-path-aliases-in-your-typescript-vite-project-4bc9750c9221) ✅
+- How to structure and manage a multi-step form using React components
+- How to handle form state and validation using react-hook-form and zod
+- How to use valtio for simple and reactive global state management
+- How to protect routes and redirect users if they skip steps using react-router
+- How to make each form step modular and reusable
+- How to improve project structure using path aliases
+- How to style the UI using tailwindcss and make it responsive
 
 ### Continued development
 
@@ -114,16 +111,19 @@ Use this section to outline areas that you want to continue focusing on in futur
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [react-hook-form](https://react-hook-form.com/) - Helped me implement advanced form validation and manage form state easily.
+- [Zod](https://zod.dev/) - Used for building powerful, schema-based form validation with great TypeScript support.
+- [path alias](https://medium.com/@ssafeya5/set-up-path-aliases-in-your-typescript-vite-project-4bc9750c9221) - Helped me organize my imports and clean up relative paths.
+- [valtio](https://valtio.dev/docs/introduction/getting-started) - Used for simple and reactive state management across form steps.
+- [tailwindcss](https://tailwindcss.com/) - Enabled me to build responsive, modern UIs quickly with utility-first styling.
+- [react-router](https://reactrouter.com/) - Used for managing navigation between form steps and protecting routes.
 
 **Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [Safeya Yasien](https://safeya-yasien-portfolio.netlify.app/)
+- Frontend Mentor - [@Safeya-Yasien](https://www.frontendmentor.io/profile/Safeya-Yasien)
 
 **Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
 
