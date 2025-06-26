@@ -22,6 +22,7 @@ const PersonalInfo = () => {
   });
   const onSubmit = (data: TFormData) => {
     store.personalInfo = data;
+    store.completedStep = 1;
     navigate("/plans");
   };
 

@@ -2,13 +2,19 @@ import { AddOn } from "@/components";
 import { Heading } from "@/components/common";
 import { addOns } from "@/data";
 import { store } from "@/store/store";
-import type { FormEvent } from "react";
+import { useEffect, type FormEvent } from "react";
 import { Link, useNavigate } from "react-router";
 import { useSnapshot } from "valtio";
 
 const AddOns = () => {
   const snap = useSnapshot(store);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (snap.completedStep < 2) {
+      navigate("/add-ons");
+    }
+  }, [snap.completedStep, navigate]);
 
   const handleSelect = (name: string) => {
     const index = store.addons.indexOf(name);
@@ -21,6 +27,7 @@ const AddOns = () => {
 
   const handleNextStep = (e: FormEvent) => {
     e.preventDefault();
+    store.completedStep = 3;
     navigate("/summary");
   };
 

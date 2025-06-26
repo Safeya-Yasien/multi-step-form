@@ -1,4 +1,18 @@
+import { store } from "@/store/store";
+import { useEffect } from "react";
+import { useNavigate } from "react-router";
+import { useSnapshot } from "valtio";
+
 const ThankYou = () => {
+  const snap = useSnapshot(store);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (snap.completedStep < 4) {
+      navigate("/summary");
+    }
+  }, [snap.completedStep, navigate]);
+
   return (
     <div className="flex flex-col items-center justify-center p-8">
       <div className="flex items-center justify-center w-16 h-16 mb-6">

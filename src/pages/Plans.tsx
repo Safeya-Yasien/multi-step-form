@@ -6,11 +6,17 @@ import { Plan, PlanSwitcher } from "@/components";
 import { billingPlans } from "@/data";
 
 import { store } from "@/store/store";
-import type { FormEvent } from "react";
+import { useEffect, type FormEvent } from "react";
 
 const Plans = () => {
   const snap = useSnapshot(store);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (snap.completedStep < 1) {
+      navigate("/plans");
+    }
+  }, [snap.completedStep, navigate]);
 
   const handlePlanSelect = (planName: string) => {
     store.plan.type = planName;
@@ -18,6 +24,7 @@ const Plans = () => {
 
   const handleNextStep = (e: FormEvent) => {
     e.preventDefault();
+    store.completedStep = 2;
     navigate("/add-ons");
   };
 

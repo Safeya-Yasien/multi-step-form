@@ -3,11 +3,17 @@ import { store } from "@/store/store";
 import { Link, useNavigate } from "react-router";
 import { useSnapshot } from "valtio";
 import { addOns, billingPlans } from "@/data";
-import type { FormEvent } from "react";
+import { useEffect, type FormEvent } from "react";
 
 const Summary = () => {
   const snap = useSnapshot(store);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (snap.completedStep < 3) {
+      navigate("/summary");
+    }
+  }, [snap.completedStep, navigate]);
 
   const plan = snap.plan;
   const billing = plan.billing;
@@ -33,6 +39,7 @@ const Summary = () => {
 
   const handleConfirm = (e: FormEvent) => {
     e.preventDefault();
+    store.completedStep = 4;
     navigate("/thank-you");
   };
 
