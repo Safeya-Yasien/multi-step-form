@@ -2,7 +2,7 @@ import { Heading } from "@/components/common";
 import { store } from "@/store/store";
 import { Link, useNavigate } from "react-router";
 import { useSnapshot } from "valtio";
-import { addOns } from "@/data";
+import { addOns, billingPlans } from "@/data";
 import type { FormEvent } from "react";
 
 const Summary = () => {
@@ -13,7 +13,12 @@ const Summary = () => {
   const billing = plan.billing;
   const isYearly = billing === "yearly";
 
-  const basePrice = isYearly ? 90 : 9;
+  const selectedPlan = billingPlans.find((p) => p.name === plan.type);
+  const basePrice = selectedPlan
+    ? isYearly
+      ? selectedPlan.price * 10
+      : selectedPlan.price
+    : 0;
 
   const selectedAddOns = addOns.filter((item) =>
     snap.addons.includes(item.name)
@@ -28,7 +33,7 @@ const Summary = () => {
 
   const handleConfirm = (e: FormEvent) => {
     e.preventDefault();
-   navigate('/thank-you')
+    navigate("/thank-you");
   };
 
   return (
