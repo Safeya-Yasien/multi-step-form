@@ -29,13 +29,13 @@ const Plans = () => {
   };
 
   return (
-    <div>
+    <>
       <Heading
         title={"Select your plan"}
         description={"You have the option of monthly or yearly billing."}
       />
 
-      <form className="flex flex-col gap-6" onSubmit={handleNextStep}>
+      <form className="flex flex-col gap-6 pb-20" onSubmit={handleNextStep}>
         {/* plan options */}
         <div className="flex flex-col md:flex-row gap-4">
           {billingPlans.map((plan) => (
@@ -71,7 +71,7 @@ const Plans = () => {
           </button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 export default Plans;

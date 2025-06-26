@@ -32,13 +32,13 @@ const AddOns = () => {
   };
 
   return (
-    <div>
+    < >
       <Heading
         title={"Pick your add-ons"}
         description={"Add-ons help enhance your gaming experience."}
       />
 
-      <form className="flex flex-col gap-6" onSubmit={handleNextStep}>
+      <form className="flex flex-col gap-6 pb-20" onSubmit={handleNextStep}>
         <div className="flex flex-col gap-4">
           {addOns.map((addOn) => (
             <AddOn
@@ -69,7 +69,7 @@ const AddOns = () => {
           </button>
         </div>
       </form>
-    </div>
+    </>
   );
 };
 
